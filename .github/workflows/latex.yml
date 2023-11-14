@@ -6,12 +6,12 @@ jobs:
     env:
       # Edit here with the names of your latex file and directory (can use ".")
       DIR: documenti 
-      FILE: main.tex 
+      FILE: main
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install TeXlive
-        run: sudo apt-get update && sudo apt-get install texlive texlive-publishers texlive-science latexmk cm-super
+        run: sudo apt-get update && sudo apt-get install texlive 
       - name: LaTeX compile
         working-directory: ${{ env.DIR }}
         #run: latexmk -pdf -bibtex ${{ env.FILE }}
