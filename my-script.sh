@@ -2,4 +2,4 @@
 
 echo "entro nella cartella documenti..." 
 cd "documenti"
-pdflatex main.tex
+latexmk main.tex
