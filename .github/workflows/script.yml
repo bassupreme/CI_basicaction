@@ -6,5 +6,7 @@ jobs:
     steps:
       - name: Check out the repository to the runner
         uses: actions/checkout@v4  
+      - name: list docuents 
+        run: ls -a
       - name: Run a script
-        run: ./my-script.sh
+        run: sh ./my-script.sh
