@@ -13,13 +13,5 @@ jobs:
       - name: Install TeXlive
         run: sudo apt-get update && sudo apt-get install texlive 
       - name: LaTeX compile
-        working-directory: ${{ env.DIR }}
-        #run: latexmk -pdf -bibtex ${{ env.FILE }}
-        run: pdflatex ${{ env.FILE }}
-      - name: move
-        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
-      - name: Upload pdf as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ env.FILE }}.pdf
-          path: ./github_artifacts
+        run: sh ./my-script.sh 
+      
